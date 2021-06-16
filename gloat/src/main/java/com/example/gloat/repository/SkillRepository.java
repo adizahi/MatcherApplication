@@ -2,7 +2,9 @@ package com.example.gloat.repository;
 
 import com.example.gloat.model.Skill;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface SkillRepository extends JpaRepository<Skill, Integer> { //??
+@Repository
+public interface SkillRepository extends JpaRepository<Skill, String> {
     Skill findByName(String name);
 }

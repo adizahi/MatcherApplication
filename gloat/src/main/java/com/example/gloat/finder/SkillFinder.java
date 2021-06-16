@@ -1,4 +1,4 @@
-package com.example.gloat.handler;
+package com.example.gloat.finder;
 
 import com.example.gloat.model.Skill;
 import com.example.gloat.repository.SkillRepository;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class SkillHandler {
+public class SkillFinder {
 
     @Autowired
     SkillRepository skillRepository;
@@ -42,26 +42,13 @@ public class SkillHandler {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    public ResponseEntity<Skill> createSkill(Skill skill) {
-        try {
-            Skill skill1 = skillRepository.save(new Skill(skill.getId(), skill.getName()));
-            return new ResponseEntity<>(skill1, HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-
-//    public ResponseEntity<Skill> getSkillById(int skillId){
+//TODO need to be fix (id problem)
+//    public ResponseEntity<Skill> createSkill(String skillName) {
 //        try {
-//            Skill skill = skillRepository.getOne(skillId);
-//            if (skill.isEmpty()) {
-//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//            }
-//            return new ResponseEntity<>(skill, HttpStatus.OK);
+//            Skill skill1 = skillRepository.save(new Skill(skillName));
+//            return new ResponseEntity<>(skill1, HttpStatus.CREATED);
 //        } catch (Exception e) {
-//            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
 //        }
 //    }
 

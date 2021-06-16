@@ -1,36 +1,35 @@
 package com.example.gloat.model;
 
+import lombok.Data;
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.FetchType.EAGER;
+
+@Data
 @Entity
-@Table(name = "SKILL")
+@Table(name = "Skill")
 public class Skill {
-    @Id
-    @Column(name = "id")
-//    @GeneratedValue
-//    private final int id;
-    private int id; //??
 
+    @Id
+    @Column(name = "skill_id")
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
+
+    //Consideration: skill.name always in lower case
     @Column(name = "name")
     private String name;
 
-    public Skill(){}
-
-    public Skill(int id, String name) {
-        this.id = id;
+    public Skill(String name) {
         this.name = name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
+    public Skill() {
     }
 
     public boolean isEmpty() {
@@ -38,10 +37,5 @@ public class Skill {
             return true;
         }
         return false;
-    }
-
-    @Override
-    public String toString() {
-        return "Skill [id=" + id + ", name=" + name + "]";
     }
 }
