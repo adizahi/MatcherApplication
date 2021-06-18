@@ -31,11 +31,4 @@ public class Skill {
 
     public Skill() {
     }
-
-    public boolean isEmpty() {
-        if (name.isEmpty()){
-            return true;
-        }
-        return false;
-    }
 }

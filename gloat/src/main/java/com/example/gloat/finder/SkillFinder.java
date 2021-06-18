@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SkillFinder {
@@ -18,8 +19,7 @@ public class SkillFinder {
 
     public ResponseEntity<List<Skill>> getAllSkills() {
         try {
-            List<Skill> skills = new ArrayList<>();
-            skills.addAll(skillRepository.findAll());
+            List<Skill> skills = new ArrayList<>(skillRepository.findAll());
 
             if (skills.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -33,11 +33,11 @@ public class SkillFinder {
 
     public ResponseEntity<Skill> getSkillByName(String skillName){
         try {
-            Skill skill = skillRepository.findByName(skillName);
+            Optional<Skill> skill = skillRepository.findByName(skillName);
             if (skill.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-            return new ResponseEntity<>(skill, HttpStatus.OK);
+            return new ResponseEntity<>(skill.get(), HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

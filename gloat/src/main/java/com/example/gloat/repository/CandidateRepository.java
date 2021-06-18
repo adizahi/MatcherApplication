@@ -11,4 +11,5 @@ import java.util.List;
 public interface CandidateRepository extends JpaRepository<Candidate, Integer> {
     List<Candidate> findAllByTitle(String title);
     List<Candidate> findAllBySkills(Skill skill);
+    List<Candidate> findByTitleIn(List<String> titles);
 }
