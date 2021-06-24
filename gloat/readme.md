@@ -5,9 +5,10 @@
 # how to run?
 First you need make sure you have java v11 install in your computer.
 In order to run the application:
-- java -jar gloat-0.0.1-SNAPSHOT.jar
+- first clone the repository
+- run the main class application which called "MatcherApplication.java" using your favorite IDE
 - open PostMan (or any other rest tool) in order to send to search match candidate by job or add new candidate.
--- Attached PostMan collection for either SearchCandidate / AddCandidate actions.
+-- Attached PostMan collection (can be found under MatcherApplication/) for either SearchCandidate or AddCandidate actions.
   
 # Consideration: 
 - candidate.title value always be in lower case
