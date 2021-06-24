@@ -21,7 +21,7 @@ public class Skill {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    //Consideration: skill.name always in lower case
+    //Consideration: skill.name first letter always in lower case
     @Column(name = "name")
     private String name;
 

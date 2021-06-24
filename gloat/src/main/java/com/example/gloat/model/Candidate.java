@@ -1,15 +1,10 @@
 package com.example.gloat.model;
 
 import lombok.Data;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.springframework.context.annotation.Lazy;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
-
-import static org.hibernate.annotations.FetchMode.SELECT;
 
 @Data
 @Entity

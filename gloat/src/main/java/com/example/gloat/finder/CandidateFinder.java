@@ -31,6 +31,11 @@ public class CandidateFinder {
     public ResponseEntity<Candidate> createCandidate(Candidate candidate) {
         try {
             Candidate candidate1 = candidateRepository.save(candidate);
+            for (Skill skill : candidate.getSkills()){
+                if (skillRepository.findByName(skill.getName()).isEmpty()){
+                    skillRepository.save(skill);
+                }
+            }
             return new ResponseEntity<>(candidate1, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
