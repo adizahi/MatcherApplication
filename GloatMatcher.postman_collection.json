@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "7f07d16a-d3f5-4b63-bb6f-b8b89d4a14d7",
+		"name": "GloatMatcher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"software developer\",\r\n    \"skill\": \"Java\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/job",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/candidate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\" : \"software developer\",\r\n    \"skills\": [{\r\n        \"name\" : \"Java\"\r\n    },\r\n    {\r\n        \"name\" : \"Python\"\r\n    }]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/candidate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"candidate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
