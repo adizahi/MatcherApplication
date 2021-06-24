@@ -8,7 +8,8 @@ In order to run the application:
 - first clone the repository
 - run the main class application which called "MatcherApplication.java" using your favorite IDE
 - open PostMan (or any other rest tool) in order to send to search match candidate by job or add new candidate.
--- Attached PostMan collection (can be found under MatcherApplication/) for either SearchCandidate or AddCandidate actions.
+
+*Attached PostMan collection (MatcherApplication/GloatMatcher.postman_collection.json) for either SearchCandidate or AddCandidate actions.
   
 # Consideration: 
 - candidate.title value always be in lower case
