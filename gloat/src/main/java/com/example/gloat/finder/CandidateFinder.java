@@ -32,7 +32,7 @@ public class CandidateFinder {
         try {
             Candidate candidate1 = candidateRepository.save(candidate);
             for (Skill skill : candidate.getSkills()){
-                if (skillRepository.findByName(skill.getName()).isEmpty()){
+                if (skillRepository.findAllByName(skill.getName()).isEmpty()){
                     skillRepository.save(skill);
                 }
             }
