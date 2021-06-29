@@ -124,4 +124,7 @@ public class CandidateFinder {
         return candidate -> candidate.getTitle().contains(jobTitle);
     }
 
+    public List<Candidate> findAllCandidates() {
+        return (List<Candidate>) candidateRepository.findAll();
+    }
 }
